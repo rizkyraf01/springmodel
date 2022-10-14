@@ -6,6 +6,7 @@ import lombok.Setter;
 import org.springframework.core.serializer.Serializer;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Setter
 @Getter
@@ -17,6 +18,10 @@ public class KaryawanEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer nip;
 
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="no")
+    private Integer no;
+
     @Column(name="nama_karyawan")
     private String name;
 
@@ -24,7 +29,7 @@ public class KaryawanEntity {
     private String jenis_karyawan;
 
     @Column(name="no_telpon")
-    private int no_telpon;
+    private Integer no_telpon;
 
     @Column(name="alamat")
     private String alamat;
@@ -38,23 +43,32 @@ public class KaryawanEntity {
     @Column(name="email")
     private String email;
 
-    public KaryawanEntity(){
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "nip_absensi")
+    private List<AbsenEntity> absensi_karyawans;
 
-    }
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "nip_hadir")
+    private List<HadirEntity> hadir_karyawans;
 
-    public KaryawanEntity(Integer nip,String name,String jenis_karyawan,int no_telpon,String alamat,String departemen,String jabatan,String email){
-       this.nip=nip;
-       this.name=name;
-       this.jenis_karyawan=jenis_karyawan;
-       this.no_telpon=no_telpon;
-       this.alamat=alamat;
-       this.departemen=departemen;
-       this.jabatan=jabatan;
-       this.email=email;
-    }
-    @Override
-    public String toString(){
-        return "KaryawanEntitiy[Karyawan nip =" + nip+", name= " + name+", jenis_karyawan= "+ jenis_karyawan+ ",no_telpon = "+ no_telpon+"" +
-                ",alamat="+alamat+",departemen ="+departemen+",jabatan= "+jabatan+",email= "+email+"]";
-    }
+//
+//    public KaryawanEntity(){
+//
+//    }
+//
+//    public KaryawanEntity(Integer nip,String name,String jenis_karyawan,int no_telpon,String alamat,String departemen,String jabatan,String email){
+//       this.nip=nip;
+//       this.name=name;
+//       this.jenis_karyawan=jenis_karyawan;
+//       this.no_telpon=no_telpon;
+//       this.alamat=alamat;
+//       this.departemen=departemen;
+//       this.jabatan=jabatan;
+//       this.email=email;
+//    }
+//    @Override
+//    public String toString(){
+//        return "KaryawanEntitiy[Karyawan nip =" + nip+", name= " + name+", jenis_karyawan= "+ jenis_karyawan+ ",no_telpon = "+ no_telpon+"" +
+//                ",alamat="+alamat+",departemen ="+departemen+",jabatan= "+jabatan+",email= "+email+"]";
+//    }
 }
