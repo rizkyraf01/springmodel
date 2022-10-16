@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>My Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../My Profile/profile.css">
+</head>
+<body>
+    <div class="container px-4 mt-4 align-items-center">
+        <!-- Account page navigation-->
+        <nav class="nav nav-borders">
+            <a class="nav-link active ms-0" href="profile.html" target="__blank">Profile</a>
+        </nav>
+        <hr class="mt-0 mb-4 ">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Account details card-->
+                <div class="card mb-4">
+                    <div class="card-header">Account Details</div>
+                    <div class="card-body">
+                        <form>
+                            <!-- Form Group (ID)-->
+                            <div class="mb-3">
+                                <label class="small mb-1" for="inputID">ID Karyawan</label>
+                                <input class="form-control" id="inputID" type="text" placeholder="Enter your ID" value="NIP Karyawan">
+                            </div>
+                            <!-- Form Group (username)-->
+                            <div class="mb-3">
+                                <label class="small mb-1" for="inputUsername">Nama Karyawan</label>
+                                <input class="form-control" id="inputUsername" type="text" placeholder="Enter your username" value="Nama Karyawan">
+                            </div>
+                            <!-- Form Group (email address)-->
+                            <div class="mb-3">
+                                <label class="small mb-1" for="inputEmailAddress">Email address</label>
+                                <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address" value="name@example.com">
+                            </div>
+                            <!-- Form Group (Telepon)-->
+                            <div class="mb-3">
+                                <label class="small mb-1" for="inputTelepon">No. Telepon</label>
+                                <input class="form-control" id="inputTelepon" type="text" placeholder="Enter your No. Telepon" value="08xx xxxx xxxx">
+                            </div>
+                            <!-- Form Group (Jabatan)-->
+                            <div class="mb-3">
+                                <label class="small mb-1" for="inputJabatan">Jabatan</label>
+                                <input class="form-control" id="inputJabatan" type="text" placeholder="Enter your Jabatan" value="Jabatan">
+                            </div>
+                              <!-- Upload Foto-->
+                              <div class="form-group">
+                                <label>Upload Foto</label>
+                                <!-- <input type="file" name="img[]" class="file-upload-default"> -->
+                                <div class="input-group col-xs-12">
+                                  <input type="file" name="img[]" class="form-control file-upload-info file-upload-default" placeholder="Upload Image">
+                                  <!-- <span class="input-group-append">
+                                    <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
+                                  </span> -->
+                                </div>
+                              </div>
+                            <!-- Save changes button-->
+                            <div class="col-md-6 mt-3">
+                                <button class="btn btn-primary" type="button">Save changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Plugg in Js -->
+    <script src="./js/file-upload.js"></script>
+</body>
